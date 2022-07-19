@@ -1,0 +1,59 @@
+body {
+    margin: 0 auto;
+}
+
+.background {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    background: rgb(148,58,180);
+    background: linear-gradient(90deg, rgba(148,58,180,1) 0%, rgba(29,253,134,1) 50%, rgba(69,252,225,1) 100%);
+    display: grid;
+    grid-template-columns:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.main_block {
+    display: grid;
+    grid-row: 2 / 10;
+    grid-column: 4 / 8;
+    background: white;
+    opacity: 0.8;
+    z-index: 11;
+    grid-template-columns:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    border-radius: 2%;
+
+}
+
+.main_block .ok_button {
+    grid-row:  10;
+    grid-column: 1 / 11;
+    background: rgb(58,147,180);
+    background: linear-gradient(90deg, rgba(58,147,180,1) 0%, rgba(29,67,253,1) 50%, rgba(127,69,252,1) 100%);  
+    opacity: 2;
+    z-index: 111;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font: 3rem 'Edu VIC WA NT Beginner', cursive;
+    text-align: center;
+    border: 1px solid white;
+    line-height:100%;
+    color: white;
+}
+
+.main_block .ok_button:active {
+    background: rgb(180,58,124);
+    background: linear-gradient(90deg, rgba(180,58,124,1) 0%, rgba(253,29,180,1) 50%, rgba(252,69,110,1) 100%);
+}
+
+.question_box {
+    grid-row: 1 / 5;
+    grid-column: 1 / 11;
+    border-bottom: 2mm dashed rgba(127,69,252,1);
+}
+
+.answer_box {
+    grid-row: 5 / 10;
+    grid-column: 1 / 11;
+}
