@@ -51,9 +51,36 @@ body {
     grid-row: 1 / 5;
     grid-column: 1 / 11;
     border-bottom: 2mm dashed rgba(127,69,252,1);
+    
+    
+}
+.question_box p{
+    font: 2.5rem 'Edu VIC WA NT Beginner', cursive;
+    text-align: center;
+    line-height: 100%;
 }
 
 .answer_box {
     grid-row: 5 / 10;
     grid-column: 1 / 11;
+    font: 1.2rem 'Edu VIC WA NT Beginner', cursive;
+
+}
+
+.answer_box li:hover { 
+    background: rgb(180,58,124);
+    background: linear-gradient(90deg, rgb(170, 34, 204) 0%, rgb(33, 211, 193) 50%, rgb(23, 230, 119) 100%);
+}
+
+.answer_box li {
+    list-style: none;
+    margin-top: 3%;
+    width: 90%;
+    border-radius: 10px;
+    
+    
+}
+
+.question_box {
+    font: 1.2rem 'Edu VIC WA NT Beginner', cursive;
 }
