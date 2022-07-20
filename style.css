@@ -1,3 +1,5 @@
+/* основные слои */
+
 body {
     margin: 0 auto;
 }
@@ -26,6 +28,8 @@ body {
 
 }
 
+/* кнопка */
+
 .main_block .ok_button {
     grid-row:  10;
     grid-column: 1 / 11;
@@ -43,9 +47,14 @@ body {
 }
 
 .main_block .ok_button:active {
+    color: black;
+}
+.main_block .ok_button:hover {
     background: rgb(180,58,124);
     background: linear-gradient(90deg, rgba(180,58,124,1) 0%, rgba(253,29,180,1) 50%, rgba(252,69,110,1) 100%);
 }
+
+/* блок с вопросом */
 
 .question_box {
     grid-row: 1 / 5;
@@ -60,10 +69,21 @@ body {
     line-height: 100%;
 }
 
+.question_box {
+    font: 1.2rem 'Edu VIC WA NT Beginner', cursive;
+}
+
+/* блок с ответами */
 .answer_box {
     grid-row: 5 / 10;
     grid-column: 1 / 11;
     font: 1.2rem 'Edu VIC WA NT Beginner', cursive;
+
+}
+
+.answer_box span {
+    display: inline-block;
+    width: 90%;
 
 }
 
@@ -81,6 +101,3 @@ body {
     
 }
 
-.question_box {
-    font: 1.2rem 'Edu VIC WA NT Beginner', cursive;
-}

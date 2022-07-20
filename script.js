@@ -35,7 +35,7 @@ let score = 0;
 let questionIndex = 0;
 
 
-///////
+///////  отрисовка вопроса и ответов
 
 clearPage();
 showQuestions();
@@ -50,22 +50,44 @@ function showQuestions() {
     let text = questions[questionIndex]["question"];
     questionBox.innerHTML = `<p>${text}</p>`;
 
-    for(items of questions[questionIndex]["answers"]){
-        
+    for([index, items] of questions[questionIndex]["answers"].entries()){
+       
         answer.innerHTML += ` 
         <li>
             <label>
-                <input type="radio" class="answer">
+                <input type="radio" value="${index +1 }" class="answer" name="answer">
                 <span> ${items} </span>
             </label>
         </li>`;
+        
     }
 }
 
+//////// следующий вопрос
+
 function nextQuestion () {
+
     clearPage();
     ++questionIndex;
     showQuestions();
 }
 
-submit.addEventListener("click", nextQuestion);
+
+
+///////////////////  проверка ответа 
+
+function checkAnswer () {
+    const checkedRadio = answer.querySelector("input:checked");
+    
+    if(checkedRadio){
+        if(+checkedRadio.value === questions[questionIndex]["correct"]){
+            ++score;
+        }
+        nextQuestion();
+    } 
+    else {
+        return;
+    }
+}
+
+submit.addEventListener("click", checkAnswer);
