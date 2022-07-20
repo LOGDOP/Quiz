@@ -30,7 +30,7 @@ body {
 
 /* кнопка */
 
-.main_block .ok_button {
+ .ok_button {
     grid-row:  10;
     grid-column: 1 / 11;
     background: rgb(58,147,180);
@@ -46,10 +46,10 @@ body {
     color: white;
 }
 
-.main_block .ok_button:active {
+.ok_button:active {
     color: black;
 }
-.main_block .ok_button:hover {
+ .ok_button:hover {
     background: rgb(180,58,124);
     background: linear-gradient(90deg, rgba(180,58,124,1) 0%, rgba(253,29,180,1) 50%, rgba(252,69,110,1) 100%);
 }

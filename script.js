@@ -76,18 +76,47 @@ function nextQuestion () {
 
 ///////////////////  проверка ответа 
 
+function scoreUp(checkedRadio){
+    if(+checkedRadio.value === questions[questionIndex]["correct"]){
+        ++score;
+    }
+}
+
 function checkAnswer () {
     const checkedRadio = answer.querySelector("input:checked");
     
-    if(checkedRadio){
-        if(+checkedRadio.value === questions[questionIndex]["correct"]){
-            ++score;
-        }
+    if(checkedRadio && questionIndex !== questions.length-1 ){
+        scoreUp(checkedRadio);
         nextQuestion();
     } 
-    else {
+    else if (questionIndex === questions.length-1) {
+        scoreUp(checkedRadio);
+        clearPage();
+        finalSlide();
+    }
+    else if (!checkedRadio){
         return;
     }
+    
 }
+
+
+/* Финальная страничка */
+function finalSlide () {
+    let wordEnd = "";
+    score === 0 ? wordEnd = "ов" : score === 1 ? wordEnd = "" : score > 4 ?  wordEnd = "ов" : wordEnd = "а";
+    questionBox.innerHTML = `<p>Вы ответили на ${score} вопрос${wordEnd} из ${questions.length} </p>`
+
+    submit.innerText = ` Рестарт `;
+    submit.removeEventListener("click", checkAnswer);
+    /* submit.addEventListener("mouseDown", refrash()); */
+    submit.onclick = () => history.go();
+}
+
+/* Обновить страницу */
+function refrash () {
+    history.go();
+}
+
 
 submit.addEventListener("click", checkAnswer);
